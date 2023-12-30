@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Weather;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,8 @@ class WeatherFactory extends Factory
     {
         return [
             'city' => fake()->city(),
-            'temperature' => fake()->numberBetween(1, 100)
+            'temperature' => fake()->numberBetween(1, 100),
+            'condition' => fake()->randomElement(Weather::CONDITION_LIST)
         ];
     }
 }

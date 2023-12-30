@@ -11,6 +11,15 @@ class Weather extends Model
 
     protected $fillable = [
         'city',
-        'temperature'
+        'temperature',
+        'condition'
+    ];
+
+    public const CONDITION_SUNNY = 'sunny';
+    public const CONDITION_CLOUDY = 'cloudy';
+
+    public const CONDITION_LIST = [
+        self::CONDITION_SUNNY,
+        self::CONDITION_CLOUDY
     ];
 }

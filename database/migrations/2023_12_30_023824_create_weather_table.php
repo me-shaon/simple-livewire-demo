@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('city');
             $table->string('temperature');
+            $table->string('condition');
             $table->timestamps();
         });
     }
