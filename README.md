@@ -4,6 +4,8 @@
 
 This is a simple example to show how we can broadcast Laravel event to Livewire component and show the result in real-time.
 
+Here we'll see how we can send a real-time event to a browser page when we update some data from Console command. 
+
 ### How to run
 Run the following commands to install the project: 
 ``` shell 
