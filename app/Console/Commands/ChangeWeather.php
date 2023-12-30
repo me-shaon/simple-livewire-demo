@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Events\WeatherUpdated;
 use App\Models\Weather;
 use Illuminate\Console\Command;
 use function Laravel\Prompts\text;
@@ -49,5 +50,6 @@ class ChangeWeather extends Command
             'condition' => $condition
         ]);
 
+        event(new WeatherUpdated($weather));
     }
 }

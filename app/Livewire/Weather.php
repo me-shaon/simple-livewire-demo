@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Weather as WeatherModel;
+use Livewire\Attributes\On;
 
 class Weather extends Component
 {
@@ -19,5 +20,16 @@ class Weather extends Component
         return view('livewire.weather')->with([
             'weatherList' => $this->weatherList
         ]);
+    }
+
+    #[On('echo:weather-update,WeatherUpdated')]
+    public function updateWeather($event)
+    {
+        dd($event['weather']);
+        foreach ($this->weatherList as $weather) {
+            if ($weather->id === $event['weather']['id']) {
+
+            }
+        }
     }
 }
