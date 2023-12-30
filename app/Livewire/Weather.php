@@ -25,10 +25,10 @@ class Weather extends Component
     #[On('echo:weather-update,WeatherUpdated')]
     public function updateWeather($event)
     {
-        dd($event['weather']);
         foreach ($this->weatherList as $weather) {
             if ($weather->id === $event['weather']['id']) {
-
+                $weather->temperature = $event['weather']['temperature'];
+                $weather->condition = $event['weather']['condition'];
             }
         }
     }
